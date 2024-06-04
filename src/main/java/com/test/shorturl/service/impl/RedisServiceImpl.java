@@ -11,11 +11,9 @@ import com.test.shorturl.service.RedisService;
 @Service
 public class RedisServiceImpl implements RedisService {
 
-    @SuppressWarnings("rawtypes")
     @Autowired
-    private RedisTemplate redisTemplate;
+    private RedisTemplate<Object, Object> redisTemplate;
 
-    @SuppressWarnings("unchecked")
     @Override
     public void setValue(String key, String value) {
         redisTemplate.opsForValue().set(key, value);
@@ -26,7 +24,6 @@ public class RedisServiceImpl implements RedisService {
         return redisTemplate.opsForValue().get(key);
     }
 
-    @SuppressWarnings("unchecked")
     @Override
     public void setWithExpiration(String key, String value, long expirationMinutes) {
         redisTemplate.opsForValue().set(key, value, expirationMinutes, TimeUnit.MINUTES);
