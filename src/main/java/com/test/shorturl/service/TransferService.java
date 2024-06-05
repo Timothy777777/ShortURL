@@ -1,11 +1,11 @@
 package com.test.shorturl.service;
 
-import com.test.shorturl.dto.UrlRequest;
-import com.test.shorturl.dto.UrlResponse;
+import com.test.shorturl.dto.GetShortUrlRequest;
+import com.test.shorturl.dto.GetShortUrlResponse;
 
 public interface TransferService {
 
-    UrlResponse getShortUrl(UrlRequest request);
+    GetShortUrlResponse getShortUrl(GetShortUrlRequest request);
 
-    String goUrl(String code);
+    String toRealUrl(String code);
 }

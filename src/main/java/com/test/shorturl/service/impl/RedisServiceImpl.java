@@ -12,7 +12,7 @@ import com.test.shorturl.service.RedisService;
 public class RedisServiceImpl implements RedisService {
 
     @Autowired
-    private RedisTemplate<Object, Object> redisTemplate;
+    private RedisTemplate<String, String> redisTemplate;
 
     @Override
     public void setValue(String key, String value) {

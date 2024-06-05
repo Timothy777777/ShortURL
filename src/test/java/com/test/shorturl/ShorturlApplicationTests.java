@@ -9,9 +9,8 @@ import org.springframework.data.redis.core.RedisTemplate;
 @SpringBootTest
 class ShorturlApplicationTests {
 
-	@SuppressWarnings("rawtypes")
 	@Autowired
-	RedisTemplate redisTemplate;
+	RedisTemplate<String, String> redisTemplate;
 
 	@Test
 	void contextLoads() {
