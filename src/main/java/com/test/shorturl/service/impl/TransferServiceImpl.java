@@ -21,7 +21,7 @@ public class TransferServiceImpl implements TransferService {
 
     @Override
     public GetShortUrlResponse getShortUrl(GetShortUrlRequest request) {
-        GetShortUrlResponse response = new GetShortUrlResponse();
+        GetShortUrlResponse response = new GetShortUrlResponse(null, null, null);
         String shorturl = DigestUtils.md5DigestAsHex(request.getUrl().getBytes());
         long expireTime = Integer.valueOf(request.getExpireTime());
         try {

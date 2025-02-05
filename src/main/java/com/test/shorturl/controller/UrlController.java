@@ -10,6 +10,7 @@ import com.test.shorturl.dto.GetShortUrlResponse;
 import com.test.shorturl.service.TransferService;
 
 import io.swagger.v3.oas.annotations.Operation;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("shorturl")
@@ -25,7 +26,7 @@ public class UrlController {
     }
 
     @PostMapping(value = "/getShortUrl")
-    public ResponseEntity<GetShortUrlResponse> getShortUrl(@RequestBody GetShortUrlRequest request) {
+    public ResponseEntity<GetShortUrlResponse> getShortUrl(@RequestBody @Valid GetShortUrlRequest request) {
         GetShortUrlResponse response = transferService.getShortUrl(request);
         if (response.getStatusCode().equals("0")) {
             return ResponseEntity.ok(response);
